@@ -1,13 +1,11 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
+import Level from "./level";
 
 const StatusInfo = () => {
   return (
     <View style={s.statusInfo}>
-      <View style={s.lvlContainer}>
-        <Text style={s.count}>18</Text>
-        <Text style={s.StatusInfo}>LEVEL</Text>
-      </View>
+      <Level />
 
       <View style={s.jobAndTitleContainer}>
         <View style={s.keyContainer}>
@@ -27,7 +25,6 @@ const s = StyleSheet.create({
   statusInfo: {
     paddingVertical: 25,
     paddingHorizontal: 15,
-    flex: 1,
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "baseline",
@@ -56,29 +53,6 @@ const s = StyleSheet.create({
     fontSize: 15,
     letterSpacing: 2,
     color: "white",
-  },
-  lvlContainer: {
-    alignItems: "center",
-  },
-  count: {
-    fontSize: 60,
-    letterSpacing: 2,
-    color: "white",
-    // fontFamily: "FriendorFoeTallBB",
-    fontWeight: "700",
-    textShadowColor: "white",
-    textShadowOffset: { width: 1, height: 0.8 },
-    textShadowRadius: 8,
-  },
-  StatusInfo: {
-    fontSize: 20,
-    letterSpacing: 2,
-    color: "white",
-    // fontFamily: "FriendorFoeTallBB",
-    fontWeight: "500",
-    textShadowColor: "white",
-    textShadowOffset: { width: 2, height: 0.8 },
-    textShadowRadius: 8,
   },
 });
 

@@ -1,9 +1,13 @@
+import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import TopStatus from "./components/status";
 import Level from "./components/statusInfo";
+import Points from "./components/points";
+import DailyTaskButton from "./components/dailyTaskButton";
+import Warning from "./components/warning";
 
 export default function App() {
   return (
@@ -11,8 +15,11 @@ export default function App() {
       <View style={styles.innerContainer}>
         <TopStatus />
         <Level />
-        <StatusBar style="auto" />
+        <Points />
+        <DailyTaskButton />
+        <Warning />
       </View>
+      <StatusBar style="auto" />
     </SafeAreaView>
   );
 }
@@ -22,8 +29,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#091f2c",
   },
+
   innerContainer: {
-    marginTop: 80,
-    flex: 1,
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 40,
   },
 });

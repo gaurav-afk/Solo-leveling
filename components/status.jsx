@@ -29,8 +29,8 @@ const TopStatus = () => {
 
 const s = StyleSheet.create({
   status: {
-    borderWidth: 0.5, // Border width
-    borderColor: "white", // Border color
+    borderWidth: 0.5, 
+    borderColor: "white", 
     paddingHorizontal: "20%",
     paddingVertical: 10,
     fontSize: 40,
