@@ -48,7 +48,7 @@ const s = StyleSheet.create({
     alignSelf: "center",
     margin: 10,
     borderColor: "white",
-    height: "30%",
+    height: 200,
     flexDirection: "row",
     justifyContent: "space-around",
   },
