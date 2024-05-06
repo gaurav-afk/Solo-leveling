@@ -1,17 +1,19 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 
-const DailyTaskButton = () => {
+const DailyTaskButton = ({ onPress, buttonText }) => {
   return (
     <View style={s.button}>
-      <Text style={s.buttonText}>START DAILY TASK</Text>
+      <TouchableOpacity onPress={onPress}>
+        <Text style={s.buttonText}>{buttonText}</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
 const s = StyleSheet.create({
   button: {
-    width: "90%",
+    width: "96%",
     borderWidth: 0.5,
     borderColor: "white",
     paddingHorizontal: "5%",
@@ -21,7 +23,7 @@ const s = StyleSheet.create({
     alignItems: "center",
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 15,
     letterSpacing: 8,
     color: "white",
     fontWeight: "500",

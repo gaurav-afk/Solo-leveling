@@ -44,7 +44,7 @@ const Points = () => {
 const s = StyleSheet.create({
   container: {
     borderWidth: 0.5,
-    width: "90%",
+    width: "96%",
     alignSelf: "center",
     margin: 10,
     borderColor: "white",

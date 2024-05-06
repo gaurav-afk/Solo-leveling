@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -11,6 +11,12 @@ import Warning from "./components/warning";
 import Loader10Seconds from "./components/spinner";
 
 export default function App() {
+  const [taskStarted, setTaskStarted] = useState(false);
+
+  const handleStartTask = () => {
+    setTaskStarted(!taskStarted);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -18,9 +24,20 @@ export default function App() {
           <TopStatus />
           <Level />
           <Points />
-          <DailyTaskButton />
-          <Warning />
-          <Loader10Seconds />
+          {!taskStarted && (
+            <DailyTaskButton
+              onPress={handleStartTask}
+              buttonText={"START DAILY TASK"}
+            />
+          )}
+          {taskStarted && (
+            <DailyTaskButton
+              onPress={handleStartTask}
+              buttonText={"TASK COMPLETED"}
+            />
+          )}
+          {taskStarted && <Warning />}
+          {taskStarted && <Loader10Seconds />}
         </View>
         <StatusBar style="auto" />
       </ScrollView>
@@ -35,6 +52,7 @@ const styles = StyleSheet.create({
   },
   innerContainer: {
     paddingHorizontal: 20,
+    marginTop: 50,
     paddingTop: 20,
     paddingBottom: 40,
   },
